@@ -149,7 +149,7 @@ class ClamAV
 
         try {
             $socket      = (new \Socket\Raw\Factory())->createClient('unix://' . $localSocket);
-            $clamdClient = new \Xenolope\Quahog\Client($socket, 30, PHP_NORMAL_READ);
+            $clamdClient = new \Xenolope\Quahog\Client($socket, 60, PHP_NORMAL_READ);
 
             if ($startSession) {
                 $clamdClient->startSession();
